@@ -78,9 +78,9 @@
     <header>УЧ СФЕРУМ</header>
     <section>
       <h2>Привет Сергей!</h2>
-      <a href="#" class="btn" onclick="showPage('schedule')">Посмотреть расписание</a>
-      <a href="#" class="btn" onclick="showPage('homework')">Посмотреть домашнее задание</a>
-      <a href="#" class="btn" onclick="alert('В разработке!')">Узнать оценки</a>
+      <a class="btn" onclick="showPage('schedule')">Посмотреть расписание</a>
+      <a class="btn" onclick="showPage('homework')">Посмотреть домашнее задание</a>
+      <a class="btn" onclick="alert('В разработке!')">Узнать оценки</a>
     </section>
   </div>
 
@@ -96,109 +96,27 @@
         <p><b>Четверг:</b><br>1. Русский<br>2. Русский<br>3. Музыка<br>4. Математика<br>5. Литература<br>6. Физкультура<br>7. Биология</p>
         <p><b>Пятница:</b><br>1. Английский<br>2. Математика<br>3. Русский<br>4. История<br>5. Русский<br>6. Технология<br>7. Технология</p>
       </div>
-      <br>
-      <a href="#" class="btn" onclick="showPage('page2')">Назад</a>
+      <a class="btn" onclick="showPage('page2')">Назад</a>
     </section>
   </div>
 
-  <!-- Домашнее задание -->
+  <!-- Домашка -->
   <div id="homework" style="display:none;">
     <header>УЧ СФЕРУМ</header>
     <section>
       <h2>Домашнее задание</h2>
-      <!-- Кнопки для выбора дня -->
-      <div id="day-buttons">
-        <span class="btn" onclick="showHomework('mon')">Понедельник</span>
-        <span class="btn" onclick="showHomework('tue')">Вторник</span>
-        <span class="btn" onclick="showHomework('wed')">Среда</span>
-        <span class="btn" onclick="showHomework('thu')">Четверг</span>
-        <span class="btn" onclick="showHomework('fri')">Пятница</span>
+      
+      <!-- Меню выбора дня -->
+      <div id="day-menu">
+        <span class="btn" onclick="showDay('mon')">Понедельник</span>
+        <span class="btn" onclick="showDay('tue')">Вторник</span>
+        <span class="btn" onclick="showDay('wed')">Среда</span>
+        <span class="btn" onclick="showDay('thu')">Четверг</span>
+        <span class="btn" onclick="showDay('fri')">Пятница</span>
         <br><br>
-        <a href="#" class="btn" onclick="showPage('page2')">Назад</a>
+        <a class="btn" onclick="showPage('page2')">Назад</a>
       </div>
 
       <!-- Понедельник -->
       <div id="mon" class="content-box hidden">
-        <h3>Понедельник</h3>
-        <p>Классный час — ________</p>
-        <p>Физкультура — ________</p>
-        <p>Литература — ________</p>
-        <p>Литература — ________</p>
-        <p>Математика — ________</p>
-        <p>Английский — ________</p>
-        <a href="#" class="btn" onclick="backToDays()">Назад</a>
-      </div>
-
-      <!-- Вторник -->
-      <div id="tue" class="content-box hidden">
-        <h3>Вторник</h3>
-        <p>Русский — ________</p>
-        <p>Русский — ________</p>
-        <p>География — ________</p>
-        <p>История — ________</p>
-        <p>ИЗО — ________</p>
-        <p>Математика — ________</p>
-        <a href="#" class="btn" onclick="backToDays()">Назад</a>
-      </div>
-
-      <!-- Среда -->
-      <div id="wed" class="content-box hidden">
-        <h3>Среда</h3>
-        <p>Английский — ________</p>
-        <p>Физкультура — ________</p>
-        <p>История — ________</p>
-        <p>Функциональная грамотность — ________</p>
-        <p>Математика — ________</p>
-        <a href="#" class="btn" onclick="backToDays()">Назад</a>
-      </div>
-
-      <!-- Четверг -->
-      <div id="thu" class="content-box hidden">
-        <h3>Четверг</h3>
-        <p>Русский — ________</p>
-        <p>Русский — ________</p>
-        <p>Музыка — ________</p>
-        <p>Математика — ________</p>
-        <p>Литература — ________</p>
-        <p>Физкультура — ________</p>
-        <p>Биология — ________</p>
-        <a href="#" class="btn" onclick="backToDays()">Назад</a>
-      </div>
-
-      <!-- Пятница -->
-      <div id="fri" class="content-box hidden">
-        <h3>Пятница</h3>
-        <p>Английский — ________</p>
-        <p>Математика — ________</p>
-        <p>Русский — ________</p>
-        <p>История — ________</p>
-        <p>Русский — ________</p>
-        <p>Технология — ________</p>
-        <p>Технология — ________</p>
-        <a href="#" class="btn" onclick="backToDays()">Назад</a>
-      </div>
-
-    </section>
-  </div>
-
-  <script>
-    function showPage(pageId) {
-      document.querySelectorAll("div[id]").forEach(div => div.style.display = "none");
-      document.getElementById(pageId).style.display = "block";
-      window.scrollTo(0,0);
-    }
-
-    function showHomework(dayId) {
-      document.getElementById("day-buttons").style.display = "none";
-      document.querySelectorAll("#homework .content-box").forEach(box => box.classList.add("hidden"));
-      document.getElementById(dayId).classList.remove("hidden");
-    }
-
-    function backToDays() {
-      document.querySelectorAll("#homework .content-box").forEach(box => box.classList.add("hidden"));
-      document.getElementById("day-buttons").style.display = "block";
-    }
-  </script>
-
-</body>
-</html>
+        <h3>Понедельн
