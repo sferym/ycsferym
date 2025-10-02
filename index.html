@@ -25,21 +25,22 @@
     }
     .btn {
       display: inline-block;
-      margin: 10px;
-      padding: 12px 24px;
+      margin: 8px;
+      padding: 12px 20px;
       background: #1976d2;
       color: white;
       text-decoration: none;
       border-radius: 8px;
       transition: 0.3s;
+      cursor: pointer;
     }
     .btn:hover {
       background: #0d47a1;
     }
-    .schedule, .homework {
+    .content-box {
       text-align: left;
-      max-width: 700px;
-      margin: 0 auto;
+      max-width: 600px;
+      margin: 20px auto;
       background: white;
       padding: 20px;
       border-radius: 12px;
@@ -56,17 +57,8 @@
       border-radius: 50%;
       cursor: pointer;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background: #f1f1f1;
+    .hidden {
+      display: none;
     }
   </style>
 </head>
@@ -97,7 +89,7 @@
     <header>УЧ СФЕРУМ</header>
     <section>
       <h2>Расписание</h2>
-      <div class="schedule">
+      <div class="content-box">
         <p><b>Понедельник:</b><br>1. Классный час<br>2. Физкультура<br>3. Литература<br>4. Литература<br>5. Математика<br>6. Английский</p>
         <p><b>Вторник:</b><br>1. Русский<br>2. Русский<br>3. География<br>4. История<br>5. ИЗО<br>6. Математика</p>
         <p><b>Среда:</b><br>1. Английский<br>2. Физкультура<br>3. История<br>4. Функц. грамотность<br>5. Математика</p>
@@ -114,53 +106,78 @@
     <header>УЧ СФЕРУМ</header>
     <section>
       <h2>Домашнее задание</h2>
-      <div class="homework">
-        <table>
-          <tr>
-            <th>День</th>
-            <th>Предмет</th>
-            <th>Задание</th>
-          </tr>
-          <tr>
-            <td>Понедельник</td>
-            <td>Математика</td>
-            <td>__________</td>
-          </tr>
-          <tr>
-            <td>Понедельник</td>
-            <td>Английский</td>
-            <td>__________</td>
-          </tr>
-          <tr>
-            <td>Вторник</td>
-            <td>История</td>
-            <td>__________</td>
-          </tr>
-          <tr>
-            <td>Среда</td>
-            <td>Физкультура</td>
-            <td>__________</td>
-          </tr>
-          <tr>
-            <td>Четверг</td>
-            <td>Литература</td>
-            <td>__________</td>
-          </tr>
-          <tr>
-            <td>Пятница</td>
-            <td>Русский язык</td>
-            <td>__________</td>
-          </tr>
-          <tr>
-            <td>Пятница</td>
-            <td>Технология</td>
-            <td>__________</td>
-          </tr>
-        </table>
-        <p style="color:gray; font-size:14px;">(Впиши сюда задания вручную)</p>
+      <!-- Кнопки для выбора дня -->
+      <div id="day-buttons">
+        <span class="btn" onclick="showHomework('mon')">Понедельник</span>
+        <span class="btn" onclick="showHomework('tue')">Вторник</span>
+        <span class="btn" onclick="showHomework('wed')">Среда</span>
+        <span class="btn" onclick="showHomework('thu')">Четверг</span>
+        <span class="btn" onclick="showHomework('fri')">Пятница</span>
+        <br><br>
+        <a href="#" class="btn" onclick="showPage('page2')">Назад</a>
       </div>
-      <br>
-      <a href="#" class="btn" onclick="showPage('page2')">Назад</a>
+
+      <!-- Понедельник -->
+      <div id="mon" class="content-box hidden">
+        <h3>Понедельник</h3>
+        <p>Классный час — ________</p>
+        <p>Физкультура — ________</p>
+        <p>Литература — ________</p>
+        <p>Литература — ________</p>
+        <p>Математика — ________</p>
+        <p>Английский — ________</p>
+        <a href="#" class="btn" onclick="backToDays()">Назад</a>
+      </div>
+
+      <!-- Вторник -->
+      <div id="tue" class="content-box hidden">
+        <h3>Вторник</h3>
+        <p>Русский — ________</p>
+        <p>Русский — ________</p>
+        <p>География — ________</p>
+        <p>История — ________</p>
+        <p>ИЗО — ________</p>
+        <p>Математика — ________</p>
+        <a href="#" class="btn" onclick="backToDays()">Назад</a>
+      </div>
+
+      <!-- Среда -->
+      <div id="wed" class="content-box hidden">
+        <h3>Среда</h3>
+        <p>Английский — ________</p>
+        <p>Физкультура — ________</p>
+        <p>История — ________</p>
+        <p>Функциональная грамотность — ________</p>
+        <p>Математика — ________</p>
+        <a href="#" class="btn" onclick="backToDays()">Назад</a>
+      </div>
+
+      <!-- Четверг -->
+      <div id="thu" class="content-box hidden">
+        <h3>Четверг</h3>
+        <p>Русский — ________</p>
+        <p>Русский — ________</p>
+        <p>Музыка — ________</p>
+        <p>Математика — ________</p>
+        <p>Литература — ________</p>
+        <p>Физкультура — ________</p>
+        <p>Биология — ________</p>
+        <a href="#" class="btn" onclick="backToDays()">Назад</a>
+      </div>
+
+      <!-- Пятница -->
+      <div id="fri" class="content-box hidden">
+        <h3>Пятница</h3>
+        <p>Английский — ________</p>
+        <p>Математика — ________</p>
+        <p>Русский — ________</p>
+        <p>История — ________</p>
+        <p>Русский — ________</p>
+        <p>Технология — ________</p>
+        <p>Технология — ________</p>
+        <a href="#" class="btn" onclick="backToDays()">Назад</a>
+      </div>
+
     </section>
   </div>
 
@@ -169,6 +186,17 @@
       document.querySelectorAll("div[id]").forEach(div => div.style.display = "none");
       document.getElementById(pageId).style.display = "block";
       window.scrollTo(0,0);
+    }
+
+    function showHomework(dayId) {
+      document.getElementById("day-buttons").style.display = "none";
+      document.querySelectorAll("#homework .content-box").forEach(box => box.classList.add("hidden"));
+      document.getElementById(dayId).classList.remove("hidden");
+    }
+
+    function backToDays() {
+      document.querySelectorAll("#homework .content-box").forEach(box => box.classList.add("hidden"));
+      document.getElementById("day-buttons").style.display = "block";
     }
   </script>
 
