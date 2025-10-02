@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Домашнее задание — УЧ СФЕРУМ</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>УЧ СФЕРУМ</header>
+  <section>
+    <h2>Домашнее задание</h2>
+
+    <!-- Меню дней -->
+    <div id="day-menu">
+      <span class="btn" onclick="showDay('mon')">Понедельник</span>
+      <span class="btn" onclick="showDay('tue')">Вторник</span>
+      <span class="btn" onclick="showDay('wed')">Среда</span>
+      <span class="btn" onclick="showDay('thu')">Четверг</span>
+      <span class="btn" onclick="showDay('fri')">Пятница</span>
+      <br><br>
+      <a class="btn" onclick="showPage('page2.html')">Назад</a>
+    </div>
+
+    <!-- Понедельник -->
+    <div id="mon" class="content-box hidden">
+      <h3>Понедельник</h3>
+      <p>Классный час — ________</p>
+      <p>Физкультура — ________</p>
+      <p>Литература — ________</p>
+      <p>Литература — ________</p>
+      <p>Математика — ________</p>
+      <p>Английский — ________</p>
+      <a class="btn" onclick="backToMenu()">Назад</a>
+    </div>
+
+    <!-- Вторник -->
+    <div id="tue" class="content-box hidden">
+      <h3>Вторник</h3>
+      <p>Русский — ________</p>
+      <p>Русский — ________</p>
+      <p>География — ________</p>
+      <p>История — ________</p>
+      <p>ИЗО — ________</p>
+      <p>Математика — ________</p>
+      <a class="btn" onclick="backToMenu()">Назад</a>
+    </div>
+
+    <!-- Среда -->
+    <div id="wed" class="content-box hidden">
+      <h3>Среда</h3>
+      <p>Английский — ________</p>
+      <p>Физкультура — ________</p>
+      <p>История — ________</p>
+      <p>Функциональная грамотность — ________</p>
+      <p>Математика — ________</p>
+      <a class="btn" onclick="backToMenu()">Назад</a>
+    </div>
+
+    <!-- Четверг -->
+    <div id="thu" class="content-box hidden">
+      <h3>Четверг</h3>
+      <p>Русский — ________</p>
+      <p>Русский — ________</p>
+      <p>Музыка — ________</p>
+      <p>Математика — ________</p>
+      <p>Литература — ________</p>
+      <p>Физкультура — ________</p>
+      <p>Биология — ________</p>
+      <a class="btn" onclick="backToMenu()">Назад</a>
+    </div>
+
+    <!-- Пятница -->
+    <div id="fri" class="content-box hidden">
+      <h3>Пятница</h3>
+      <p>Английский — ________</p>
+      <p>Математика — ________</p>
+      <p>Русский — ________</p>
+      <p>История — ________</p>
+      <p>Русский — ________</p>
+      <p>Технология — ________</p>
+      <p>Технология — ________</p>
+      <a class="btn" onclick="backToMenu()">Назад</a>
+    </div>
+
+  </section>
+</body>
+</html>
