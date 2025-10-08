@@ -2,15 +2,83 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>УЧ СФЕРУМ</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <title>УЧ СФЕРУМ — Вход</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-box {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 350px;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #1565c0;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    .btn {
+      padding: 10px 20px;
+      margin-top: 10px;
+      background: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #0d47a1;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-  <header>УЧ СФЕРУМ</header>
-  <section>
-    <h2>Для завершения регистрации подойди к завучу<br>и попроси подтвердить статус ученика</h2>
-    <div class="dot" onclick="showPage('page2.html')"></div>
-  </section>
+
+<div class="login-box">
+  <h2>Вход в УЧ СФЕРУМ</h2>
+  <input type="text" id="username" placeholder="Логин"><br>
+  <input type="password" id="password" placeholder="Пароль"><br>
+  <button class="btn" onclick="login()">Войти</button>
+  <div id="error" class="error"></div>
+</div>
+
+<script>
+  function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    const correctUsername = 'sergeibarbashov58740003';
+    const correctPassword = 'LM7M5BX3';
+
+    if(username === correctUsername && password === correctPassword) {
+      // Успешный вход — перенаправляем на меню сайта
+      window.location.href = 'menu.html';
+    } else {
+      // Ошибка
+      document.getElementById('error').textContent = 'Неверный логин или пароль!';
+    }
+  }
+</script>
+
 </body>
 </html>
